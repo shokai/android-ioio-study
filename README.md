@@ -1,5 +1,7 @@
 Android IOIO Study
 ==================
+[IOIO](http://www.sparkfun.com/products/10748) study
+
 
 import IOIOLib
 --------------
