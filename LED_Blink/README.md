@@ -2,11 +2,6 @@ IOIO LED Blink
 ==============
 blink LED
 
-import IOIOLib
---------------
-
-put [IOIOLib](http://codaset.com/ytai/ioio) in [workspace](http://gyazo.com/eabb43ed9c938ab32adcaff92c6a8289.png).
-
 
 Build and Install
 -----------------
