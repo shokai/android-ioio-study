@@ -13,5 +13,5 @@ put [IOIOLib](https://www.sparkfun.com/tutorial/ioio/IOIOLib.zip) in [workspace]
 Compiler Compliance Level
 -------------------------
 
-set JDK Compiler complicance level to "1.6". Eclipse->Preference->Java->Compiler.
+set JDK Compiler complicance level to "1.6". [Eclipse->Preference->Java->Compiler](http://gyazo.com/a7998a1e62a2e44ec8c5b0b5edf5be80.png).
 
