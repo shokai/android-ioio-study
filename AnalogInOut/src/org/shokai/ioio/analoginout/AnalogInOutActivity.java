@@ -65,14 +65,13 @@ public class AnalogInOutActivity extends AbstractIOIOActivity {
 				led.write(!btnLed.isChecked());
 				if(btn.read()) seekBarDigitalIn.setProgress(1);
 				else seekBarDigitalIn.setProgress(0);
-				pwm.setDutyCycle((float)seekBarPwm.getProgress()/seekBarPwm.getMax());
-				seekBarAnalogIn.setProgress((int)(ain.read()*1000));
+				pwm.setDutyCycle((float)seekBarPwm.getProgress() / seekBarPwm.getMax());
+				seekBarAnalogIn.setProgress((int) (ain.read() * 1000));
 				sleep(10);
-        	}
-			catch (InterruptedException e) {
-        	}
+			} catch (InterruptedException e) {
+			}
 		}
-		
+
 	}
 
 	@Override
