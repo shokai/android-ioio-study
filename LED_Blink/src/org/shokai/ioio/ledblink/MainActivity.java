@@ -1,6 +1,7 @@
 package org.shokai.ioio.ledblink;
 
 import ioio.lib.api.*;
+import ioio.lib.api.DigitalInput.Spec.Mode;
 import ioio.lib.api.exception.*;
 import ioio.lib.util.*;
 
@@ -62,24 +63,33 @@ public class MainActivity extends AbstractIOIOActivity implements View.OnClickLi
 	}
 	
 	public void log(String msg){
-		Log.v("IOIO_LED_Blink", msg);
+		Log.v(this.getResources().getString(R.string.app_name), msg);
 	}
 	
 	class IOIOThread extends AbstractIOIOActivity.IOIOThread{
 		
 		private DigitalOutput[] led = new DigitalOutput[3];
+		private DigitalInput btn;
 		
 		protected void setup() throws ConnectionLostException{
 			led[0] = this.ioio_.openDigitalOutput(0, true);
 			led[1] = this.ioio_.openDigitalOutput(1, true);
 			led[2] = this.ioio_.openDigitalOutput(2, true);
+			btn = this.ioio_.openDigitalInput(3, Mode.PULL_DOWN);
 		}
 		
 		protected void loop() throws ConnectionLostException{
-			led[0].write(!btn_led0.isChecked());
-			led[1].write(btn_led1.isChecked());
-			led[2].write(btn_led2.isChecked());
-			try {
+			try{
+				if(!btn.read()){
+					led[0].write(!btn_led0.isChecked());
+					led[1].write(btn_led1.isChecked());
+					led[2].write(btn_led2.isChecked());
+				}
+				else{
+					led[0].write(btn_led0.isChecked());
+					led[1].write(!btn_led1.isChecked());
+					led[2].write(!btn_led2.isChecked());				
+				}
                 sleep(10);
         	}
 			catch (InterruptedException e) {
