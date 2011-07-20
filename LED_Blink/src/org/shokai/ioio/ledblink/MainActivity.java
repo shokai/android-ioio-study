@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.*;
 
 public class MainActivity extends AbstractIOIOActivity implements View.OnClickListener {
-	ToggleButton btn_led0, btn_led1, btn_led2, btn_all;
+	private ToggleButton btn_led0, btn_led1, btn_led2, btn_all;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
