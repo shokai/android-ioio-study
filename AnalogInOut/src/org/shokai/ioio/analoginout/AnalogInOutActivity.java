@@ -66,7 +66,7 @@ public class AnalogInOutActivity extends AbstractIOIOActivity {
 				if(btn.read()) seekBarDigitalIn.setProgress(1);
 				else seekBarDigitalIn.setProgress(0);
 				pwm.setDutyCycle((float)seekBarPwm.getProgress() / seekBarPwm.getMax());
-				seekBarAnalogIn.setProgress((int) (ain.read() * 1000));
+				seekBarAnalogIn.setProgress((int) (ain.read() * seekBarAnalogIn.getMax()));
 				sleep(10);
 			} catch (InterruptedException e) {
 			}
